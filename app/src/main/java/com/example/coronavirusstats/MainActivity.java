@@ -9,6 +9,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -26,6 +29,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 public ListView coronaListView;
@@ -75,6 +79,8 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
                 }, 500);
             }
         });
+
+
     }
 
     @Override
@@ -192,4 +198,33 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
         return false;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflator = getMenuInflater();
+        inflator.inflate(R.menu.mainmenu,menu);
+
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id=item.getItemId();
+
+        switch (id){
+            case R.id.mainMenu:
+                Intent i=new Intent(MainActivity.this,TotalStats.class);
+                Toast.makeText(this,"Total clicked",Toast.LENGTH_SHORT).show();
+                i.putExtra("totalInfo",new String[]{"789789","26500","65000"});
+                startActivity(i);
+                break;
+            default:
+                break;
+        }
+
+        return true;
+
+    }
 }

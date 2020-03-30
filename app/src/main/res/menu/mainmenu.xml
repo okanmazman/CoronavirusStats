@@ -2,9 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/mainMenu" android:title="Home"
-        android:icon="@drawable/newspaper_circle_icon"
-        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/mainMenu"
+        android:title="Total"
+        app:showAsAction="ifRoom" />
 
 
 

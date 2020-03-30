@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,54 +19,93 @@
 
         <TextView
             android:id="@+id/lblCases"
-            android:layout_width="match_parent"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="Cases:" />
 
         <TextView
             android:id="@+id/txtCases"
-            android:layout_width="199dp"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="TestCaseNo"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/lblDeats"
-            android:layout_width="match_parent"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="Deaths:" />
 
         <TextView
             android:id="@+id/txtDeaths"
-            android:layout_width="match_parent"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="TestCaseNo2"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/lblRecovered"
-            android:layout_width="match_parent"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="Recovered:" />
 
         <TextView
             android:id="@+id/txtRecovered"
-            android:layout_width="match_parent"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="TestCaseNo3"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/lblTodayCases"
-            android:layout_width="match_parent"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="Today Cases:" />
 
         <TextView
             android:id="@+id/txtTodayCases"
-            android:layout_width="match_parent"
+            android:layout_width="198dp"
             android:layout_height="wrap_content"
             android:text="TestCaseNo4"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblTodayDeaths"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:text="Today Deaths:" />
+
+        <TextView
+            android:id="@+id/txtTodayDeaths"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:text="TestCaseNo5"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblCritical"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:text="Critical:" />
+
+        <TextView
+            android:id="@+id/txtCritical"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:text="TestCaseNo5"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/lblCasesPerMillion"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:text="Cases Per Million:" />
+
+        <TextView
+            android:id="@+id/txtCasesPerMillion"
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:text="TestCaseNo5"
             android:textSize="18sp" />
     </LinearLayout>
 

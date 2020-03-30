@@ -62,18 +62,14 @@ public class CoronaAdapter extends BaseAdapter {
             holder.getTxtDeaths().setText(String.valueOf(clist.get(position).getDeaths()));
             holder.getTxtRecovered().setText(String.valueOf(clist.get(position).getRecovered()));
             holder.getTxtTodayCases().setText(String.valueOf(clist.get(position).getTodayCases()));
-            /*holder.getTxtCountry().setText(getItem(position).getCountry().toString());
-            holder.getTxtCases().setText(String.valueOf(getItem(position).getCases()));
-            holder.getTxtDeaths().setText(String.valueOf(getItem(position).getDeaths()));
-            holder.getTxtRecovered().setText(String.valueOf(getItem(position).getRecovered()));
-            holder.getTxtTodayCases().setText(String.valueOf(getItem(position).getTodayCases()));*/
+            holder.getTxtTodayDeaths().setText(String.valueOf(clist.get(position).getTodayDeaths()));
+            holder.getTxtCritical().setText(String.valueOf(clist.get(position).getCritical()));
+            holder.getTxtCasesPerMillion().setText(String.valueOf(clist.get(position).getCasesPerMillion()));
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
-
-
 
         return row;
     }
@@ -100,6 +96,9 @@ public class CoronaAdapter extends BaseAdapter {
         TextView txtDeaths;
         TextView txtRecovered;
         TextView txtTodayCases;
+        TextView txtTodayDeaths;
+        TextView txtCritical;
+        TextView txtCasesPerMillion;
         View base; //tüm layout
 
         public ViewHolder(View base)
@@ -141,7 +140,26 @@ public class CoronaAdapter extends BaseAdapter {
             }
             return txtTodayCases;
         }
+        public TextView getTxtTodayDeaths() {
+            if(txtTodayDeaths==null){
+                txtTodayDeaths=base.findViewById(R.id.txtTodayDeaths);
+            }
+            return txtTodayDeaths;
+        }
 
+        public TextView getTxtCasesPerMillion() {
+            if(txtCasesPerMillion==null){
+                txtCasesPerMillion=base.findViewById(R.id.txtCasesPerMillion);
+            }
+            return txtCasesPerMillion;
+        }
+
+        public TextView getTxtCritical() {
+            if(txtCritical==null){
+                txtCritical=base.findViewById(R.id.txtCritical);
+            }
+            return txtCritical;
+        }
 
     }
 }
