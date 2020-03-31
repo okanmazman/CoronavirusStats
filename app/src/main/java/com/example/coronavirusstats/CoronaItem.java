@@ -1,5 +1,7 @@
 package com.example.coronavirusstats;
 
+import java.util.Date;
+
 class CoronaItem {
     public String country;
     public int cases;
@@ -10,7 +12,16 @@ class CoronaItem {
     public int active;
     public int critical;
     public int casesPerMillion;
+    /*public Date updateDate;
 
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }*/
     public String getCountry() {
         return country;
     }

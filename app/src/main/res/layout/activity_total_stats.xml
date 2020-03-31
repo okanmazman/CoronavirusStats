@@ -4,32 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient"
     tools:context=".TotalStats">
 
     <TextView
         android:id="@+id/lblTotalCases"
-        android:layout_width="127dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="206dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="68dp"
         android:ellipsize="none"
         android:text="Total Cases"
         android:textAlignment="center"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtTotalCasesAll"
-        android:layout_width="0dp"
-        android:layout_height="141dp"
-        android:layout_marginTop="84dp"
-        android:background="#94FFC107"
-        android:text="total "
+        android:layout_width="363dp"
+        android:layout_height="61dp"
+        android:background="#9A2196F3"
+        android:text="total 1"
         android:textAlignment="center"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTotalCases" />
+
+    <TextView
+        android:id="@+id/lblTotalDeaths"
+        android:layout_width="207dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="32dp"
+        android:ellipsize="none"
+        android:text="Total Deaths"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTotalCasesAll" />
+
+    <TextView
+        android:id="@+id/txtTotalDeaths"
+        android:layout_width="363dp"
+        android:layout_height="61dp"
+        android:background="#C1F44336"
+        android:text="total2"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTotalDeaths" />
+
+    <TextView
+        android:id="@+id/txtTotalRecovered"
+        android:layout_width="363dp"
+        android:layout_height="61dp"
+        android:background="#A88BC34A"
+        android:text="total3"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTotalDeaths2" />
+
+    <TextView
+        android:id="@+id/lblTotalDeaths2"
+        android:layout_width="207dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="32dp"
+        android:ellipsize="none"
+        android:text="Total Recovered"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTotalDeaths" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

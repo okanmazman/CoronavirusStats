@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,22 +24,30 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 public ListView coronaListView;
 public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
+
     ListView list;
     SearchView editsearch;
     CoronaAdapter ca;
     ProgressDialog prpDialogg;
     SwipeRefreshLayout mSwipeRefreshLayout;
+    TextView lstUpdate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +77,10 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
             public void onRefresh() {
                 GetCoronaInfoAll ci=new GetCoronaInfoAll();
                 ci.execute("https://coronavirus-19-api.herokuapp.com/countries");
+                lstUpdate=findViewById(R.id.txtLastUpdate);
+                SimpleDateFormat formatter = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+                String strDate = formatter.format(new Date());
+                lstUpdate.setText("Last Update: "+strDate);
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -88,6 +101,10 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
             super.onStart();
             GetCoronaInfoAll ci=new GetCoronaInfoAll();
             ci.execute("https://coronavirus-19-api.herokuapp.com/countries");
+        lstUpdate=findViewById(R.id.txtLastUpdate);
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+        String strDate = formatter.format(new Date());
+        lstUpdate.setText("Last Update: "+strDate);
 
     }
 
@@ -208,6 +225,7 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
 
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -216,8 +234,9 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
         switch (id){
             case R.id.mainMenu:
                 Intent i=new Intent(MainActivity.this,TotalStats.class);
-                Toast.makeText(this,"Total clicked",Toast.LENGTH_SHORT).show();
-                i.putExtra("totalInfo",new String[]{"789789","26500","65000"});
+
+                //Toast.makeText(this,lstUpdate.getText(),Toast.LENGTH_LONG).show();
+
                 startActivity(i);
                 break;
             default:
@@ -227,4 +246,6 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
         return true;
 
     }
+
+
 }
