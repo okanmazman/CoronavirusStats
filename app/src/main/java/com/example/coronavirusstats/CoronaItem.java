@@ -12,6 +12,9 @@ class CoronaItem {
     public int active;
     public int critical;
     public int casesPerMillion;
+    public int deathsPerMillion;
+    public int totalTests;
+    public int testsPerMillion;
     /*public Date updateDate;
 
 
@@ -92,5 +95,29 @@ class CoronaItem {
 
     public void setCasesPerMillion(int casesPerMillion) {
         this.casesPerMillion = casesPerMillion;
+    }
+
+    public int getDeathsPerMillion() {
+        return deathsPerMillion;
+    }
+
+    public void setDeathsPerMillion(int deathsPerMillion) {
+        this.deathsPerMillion = deathsPerMillion;
+    }
+
+    public int getTotalTests() {
+        return totalTests;
+    }
+
+    public void setTotalTests(int totalTests) {
+        this.totalTests = totalTests;
+    }
+
+    public int getTestsPerMillion() {
+        return testsPerMillion;
+    }
+
+    public void setTestsPerMillion(int testsPerMillion) {
+        this.testsPerMillion = testsPerMillion;
     }
 }

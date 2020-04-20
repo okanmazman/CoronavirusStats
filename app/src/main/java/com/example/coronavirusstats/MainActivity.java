@@ -38,6 +38,8 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 public ListView coronaListView;
 public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
@@ -166,13 +168,19 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
                     JSONObject obj =newsjsonarr.getJSONObject(i);
                     CoronaItem coronaItem = new CoronaItem();
 
+
                     coronaItem.setCountry(obj.getString("country"));
                     coronaItem.setCases(obj.getInt("cases"));
                     coronaItem.setDeaths(obj.getInt("deaths"));
                     coronaItem.setActive(obj.getInt("active"));
                     coronaItem.setCasesPerMillion(obj.getInt("casesPerOneMillion"));
                     coronaItem.setCritical(obj.getInt("critical"));
-                    coronaItem.setRecovered(obj.getInt("recovered"));
+
+                    if(obj.getString("recovered")!="null")
+                        coronaItem.setRecovered(obj.getInt("recovered"));
+                    else
+                        coronaItem.setRecovered(-1);
+
                     coronaItem.setTodayCases(obj.getInt("todayCases"));
                     coronaItem.setTodayDeaths(obj.getInt("todayDeaths"));
 
