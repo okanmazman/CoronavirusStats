@@ -168,13 +168,35 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
                     JSONObject obj =newsjsonarr.getJSONObject(i);
                     CoronaItem coronaItem = new CoronaItem();
 
+                    if(obj.getString("country")!="null")
+                        coronaItem.setCountry(obj.getString("country"));
+                    else
+                        coronaItem.setCountry("");
 
-                    coronaItem.setCountry(obj.getString("country"));
-                    coronaItem.setCases(obj.getInt("cases"));
-                    coronaItem.setDeaths(obj.getInt("deaths"));
-                    coronaItem.setActive(obj.getInt("active"));
-                    coronaItem.setCasesPerMillion(obj.getInt("casesPerOneMillion"));
-                    coronaItem.setCritical(obj.getInt("critical"));
+                    if(obj.getString("cases")!="null")
+                        coronaItem.setCases(obj.getInt("cases"));
+                    else
+                        coronaItem.setCases(-1);
+
+                    if(obj.getString("deaths")!="null")
+                        coronaItem.setDeaths(obj.getInt("deaths"));
+                    else
+                        coronaItem.setDeaths(obj.getInt("deaths"));
+
+                    if(obj.getString("active")!="null")
+                        coronaItem.setActive(obj.getInt("active"));
+                    else
+                        coronaItem.setActive(-1);
+
+                    if(obj.getString("casesPerOneMillion")!="null")
+                        coronaItem.setCasesPerMillion(obj.getInt("casesPerOneMillion"));
+                    else
+                        coronaItem.setCasesPerMillion(-1);
+
+                    if(obj.getString("critical")!="null")
+                        coronaItem.setCritical(obj.getInt("critical"));
+                    else
+                        coronaItem.setCritical(-1);
 
                     if(obj.getString("recovered")!="null")
                         coronaItem.setRecovered(obj.getInt("recovered"));
@@ -219,7 +241,9 @@ public List<CoronaItem>coronaList=new ArrayList<CoronaItem>();
     @Override
     public boolean onQueryTextChange(String newText) {
         String text = newText;
-        ca.filter(text);
+        if(text!=null)
+            ca.filter(text);
+
         return false;
     }
 
